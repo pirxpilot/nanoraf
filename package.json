@@ -4,12 +4,10 @@
   "description": "Only call RAF when needed",
   "main": "index.js",
   "browser": {
-    "assert": "nanoassert"
+    "assert": "@pirxpilot/nanoassert"
   },
   "scripts": {
-    "deps": "dependency-check . && dependency-check . --extra --no-dev -i nanoassert",
-    "test": "standard && npm run deps && NODE_ENV=test node test",
-    "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test.js"
+    "test": "make check"
   },
   "repository": "pirxpilot/nanoraf",
   "keywords": [
@@ -17,13 +15,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "nanoassert": "^1.1.0"
+    "@pirxpilot/nanoassert": "~1"
   },
   "devDependencies": {
-    "dependency-check": "^2.5.1",
-    "global": "^4.3.1",
-    "istanbul": "^0.4.4",
-    "standard": "^7.1.2",
-    "tape": "^4.6.0"
-  }
+    "global": "~4",
+    "standard": "~7",
+    "tape": "~5"
+  },
+  "files": [
+    "index.js"
+  ]
 }
