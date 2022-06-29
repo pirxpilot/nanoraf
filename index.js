@@ -1,35 +1,27 @@
-'use strict'
-
-var assert = require('assert')
+const assert = require('assert')
 
 module.exports = nanoraf
 
 // Only call RAF when needed
 // (fn, fn?) -> fn
-function nanoraf (render, raf) {
-  assert.equal(typeof render, 'function', 'nanoraf: render should be a function')
-  assert.ok(typeof raf === 'function' || typeof raf === 'undefined', 'nanoraf: raf should be a function or undefined')
+function nanoraf (render, raf = window.requestAnimationFrame) {
+  assert(typeof render === 'function', 'nanoraf: render should be a function')
+  assert(typeof raf === 'function', 'nanoraf: raf should be a function')
 
-  if (!raf) raf = window.requestAnimationFrame
-  var redrawScheduled = false
-  var args = null
+  let redrawScheduled = false
+  let args = null
 
-  return function frame () {
+  return function frame (...frameArgs) {
     if (args === null && !redrawScheduled) {
       redrawScheduled = true
-
-      raf(function redraw () {
-        redrawScheduled = false
-
-        var length = args.length
-        var _args = new Array(length)
-        for (var i = 0; i < length; i++) _args[i] = args[i]
-
-        render.apply(render, _args)
-        args = null
-      })
+      raf(redraw)
     }
+    args = frameArgs
 
-    args = arguments
+    function redraw () {
+      redrawScheduled = false
+      render.apply(render, args)
+      args = null
+    }
   }
 }
