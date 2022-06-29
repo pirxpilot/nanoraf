@@ -1,12 +1,14 @@
-# nanoraf [![stability][0]][1]
-[![npm version][2]][3] [![build status][4]][5] [![test coverage][6]][7]
-[![downloads][8]][9] [![js-standard-style][10]][11]
+[![NPM version][npm-image]][npm-url]
+[![Build Status][build-image]][build-url]
+[![Dependency Status][deps-image]][deps-url]
 
-Only call RAF when needed.
+# @pirxpilot/nanoraf
+
+Fork of [nanoraf]. Only call RAF when needed.
 
 ## Usage
 ```js
-var nanoraf = require('nanoraf')
+var nanoraf = require('@pirxpilot/nanoraf')
 var prev = null
 
 var frame = nanoraf(function render (state) {
@@ -46,15 +48,13 @@ $ npm install nanoraf
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
 
-[0]: https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square
-[1]: https://nodejs.org/api/documentation.html#documentation_stability_index
-[2]: https://img.shields.io/npm/v/nanoraf.svg?style=flat-square
-[3]: https://npmjs.org/package/nanoraf
-[4]: https://img.shields.io/travis/yoshuawuyts/nanoraf/master.svg?style=flat-square
-[5]: https://travis-ci.org/yoshuawuyts/nanoraf
-[6]: https://img.shields.io/codecov/c/github/yoshuawuyts/nanoraf/master.svg?style=flat-square
-[7]: https://codecov.io/github/yoshuawuyts/nanoraf
-[8]: http://img.shields.io/npm/dm/nanoraf.svg?style=flat-square
-[9]: https://npmjs.org/package/nanoraf
-[10]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
-[11]: https://github.com/feross/standard
+[nanoraf]: https://npmjs.org/package/nanoraf
+
+[npm-image]: https://img.shields.io/npm/v/@pirxpilot/nanoraf
+[npm-url]: https://npmjs.org/package/@pirxpilot/nanoraf
+
+[build-url]: https://github.com/pirxpilot/nanoraf/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/nanoraf/check
+
+[deps-image]: https://img.shields.io/librariesio/release/npm/@pirxpilot/nanoraf
+[deps-url]: https://libraries.io/npm/@pirxpilot%2Fnanoraf

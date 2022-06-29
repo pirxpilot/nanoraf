@@ -1,6 +1,6 @@
 {
-  "name": "nanoraf",
-  "version": "3.1.0",
+  "name": "@pirxpilot/nanoraf",
+  "version": "0.0.0",
   "description": "Only call RAF when needed",
   "main": "index.js",
   "browser": {
@@ -11,7 +11,7 @@
     "test": "standard && npm run deps && NODE_ENV=test node test",
     "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test.js"
   },
-  "repository": "choojs/nanoraf",
+  "repository": "pirxpilot/nanoraf",
   "keywords": [
     "raf"
   ],
