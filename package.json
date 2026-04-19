@@ -7,7 +7,10 @@
   "scripts": {
     "test": "make check"
   },
-  "repository": "pirxpilot/nanoraf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirxpilot/nanoraf.git"
+  },
   "keywords": [
     "raf"
   ],

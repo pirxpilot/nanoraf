@@ -54,7 +54,7 @@ $ npm install nanoraf
 [npm-url]: https://npmjs.org/package/@pirxpilot/nanoraf
 
 [build-url]: https://github.com/pirxpilot/nanoraf/actions/workflows/check.yaml
-[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/nanoraf/check
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/nanoraf/check.yaml?branch=main
 
 [deps-image]: https://img.shields.io/librariesio/release/npm/@pirxpilot/nanoraf
 [deps-url]: https://libraries.io/npm/@pirxpilot%2Fnanoraf
