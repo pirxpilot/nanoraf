@@ -4,8 +4,6 @@ import nanoraf from './index.js';
 
 test.before(() => jsdom());
 
-globalThis.DEBUG = true;
-
 function noop() {}
 
 test('should assert input types', t => {
