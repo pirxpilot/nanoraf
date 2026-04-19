@@ -2,10 +2,8 @@
   "name": "@pirxpilot/nanoraf",
   "version": "1.0.0",
   "description": "Only call RAF when needed",
-  "main": "index.js",
-  "browser": {
-    "assert": "@pirxpilot/nanoassert"
-  },
+  "type": "module",
+  "exports": "./index.js",
   "scripts": {
     "test": "make check"
   },
@@ -15,12 +13,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@pirxpilot/nanoassert": "~1"
+    "@pirxpilot/nanoassert": "~2"
   },
   "devDependencies": {
-    "global": "~4",
-    "standard": "~7",
-    "tape": "~5"
+    "@biomejs/biome": "2.4.12",
+    "jsdom": "~29",
+    "jsdom-global": "~3"
   },
   "files": [
     "index.js"

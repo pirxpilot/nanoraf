@@ -1,26 +1,29 @@
-const test = require('tape')
+import test from 'node:test';
+import jsdom from 'jsdom-global';
+import nanoraf from './index.js';
 
-global.window = require('global/window')
+test.before(() => jsdom());
 
-const nanoraf = require('./')
+function noop() {}
 
-function noop () { }
+test('should assert input types', t => {
+  t.plan(2);
+  t.assert.throws(() => nanoraf(), /function/);
+  t.assert.throws(() => nanoraf(noop, 123), /function/);
+});
 
-test('should assert input types', function (t) {
-  t.plan(2)
-  t.throws(() => nanoraf(), /function/)
-  t.throws(() => nanoraf(noop, 123), /function/)
-})
-
-test('should request a frame', function (t) {
-  t.plan(2)
-  const currentState = { status: 'currentState' }
-  const previousState = { status: 'previousState' }
-  window.requestAnimationFrame = () => { t.fail() }
-  const frame = nanoraf(render, fn => { setTimeout(fn) })
-  frame(currentState, previousState)
-  function render (curr, prev) {
-    t.same(curr, currentState)
-    t.same(prev, previousState)
+test('should request a frame', (t, done) => {
+  t.plan(2);
+  const currentState = { status: 'currentState' };
+  const previousState = { status: 'previousState' };
+  window.requestAnimationFrame = () => {
+    t.assert.fail();
+  };
+  const frame = nanoraf(render, fn => setTimeout(fn));
+  frame(currentState, previousState);
+  function render(curr, prev) {
+    t.assert.equal(curr, currentState);
+    t.assert.equal(prev, previousState);
+    done();
   }
-})
+});
