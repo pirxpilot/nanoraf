@@ -1,6 +1,6 @@
-const test = require('node:test');
-const nanoraf = require('./index.js');
-const jsdom = require('jsdom-global');
+import test from 'node:test';
+import jsdom from 'jsdom-global';
+import nanoraf from './index.js';
 
 test.before(() => jsdom());
 

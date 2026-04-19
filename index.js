@@ -1,10 +1,8 @@
-const assert = require('@pirxpilot/nanoassert');
-
-module.exports = nanoraf;
+import assert from '@pirxpilot/nanoassert';
 
 // Only call RAF when needed
 // (fn, fn?) -> fn
-function nanoraf(render, raf = window.requestAnimationFrame) {
+export default function nanoraf(render, raf = window.requestAnimationFrame) {
   assert(typeof render === 'function', 'nanoraf: render should be a function');
   assert(typeof raf === 'function', 'nanoraf: raf should be a function');
 
