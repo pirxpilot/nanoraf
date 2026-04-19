@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Only call RAF when needed",
   "main": "index.js",
-  "browser": {
-    "assert": "@pirxpilot/nanoassert"
-  },
   "scripts": {
     "test": "make check"
   },
@@ -18,9 +15,9 @@
     "@pirxpilot/nanoassert": "~1"
   },
   "devDependencies": {
-    "global": "~4",
-    "standard": "~7",
-    "tape": "~5"
+    "@biomejs/biome": "2.4.12",
+    "jsdom": "~29",
+    "jsdom-global": "~3"
   },
   "files": [
     "index.js"
